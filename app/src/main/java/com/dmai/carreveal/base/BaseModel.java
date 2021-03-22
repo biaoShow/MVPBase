@@ -15,19 +15,19 @@ public class BaseModel implements IModel {
         apiService = RetrofitHelper.getInstance().getApiService();
     }
 
-    @Override
-    public void unSubscribe() {
-        if (mCompositeSubscription != null && !mCompositeSubscription.isUnsubscribed()) {
-            mCompositeSubscription.clear();
-            mCompositeSubscription.unsubscribe();
-        }
-    }
-
-    @Override
-    public void addSubscribe(Subscription subscription) {
-        if (mCompositeSubscription == null) {
-            mCompositeSubscription = new CompositeSubscription();
-        }
-        mCompositeSubscription.add(subscription);
-    }
+//    @Override
+//    public void unSubscribe() {
+//        if (mCompositeSubscription != null && !mCompositeSubscription.isUnsubscribed()) {
+//            mCompositeSubscription.clear();
+//            mCompositeSubscription.unsubscribe();
+//        }
+//    }
+//
+//    @Override
+//    public void addSubscribe(Subscription subscription) {
+//        if (mCompositeSubscription == null) {
+//            mCompositeSubscription = new CompositeSubscription();
+//        }
+//        mCompositeSubscription.add(subscription);
+//    }
 }

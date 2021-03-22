@@ -94,4 +94,9 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
                 break;
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }
