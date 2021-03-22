@@ -7,12 +7,15 @@ import com.dmai.carreveal.contract.MainContract;
 import com.dmai.carreveal.model.MainModel;
 import com.dmai.carreveal.model.bean.BaseBean;
 import com.dmai.carreveal.model.bean.LoginBean;
+import com.dmai.carreveal.model.http.BaseObserver;
 import com.dmai.carreveal.view.activity.MainActivity;
 
+import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.observers.DefaultObserver;
 import io.reactivex.schedulers.Schedulers;
+import rx.Subscription;
 
 public class MainPresenter extends BasePresenter<MainActivity, MainModel> implements MainContract.Presenter {
     @Override
@@ -29,7 +32,7 @@ public class MainPresenter extends BasePresenter<MainActivity, MainModel> implem
         }
         mModel.login(username, password).subscribeOn(Schedulers.io())//子线程请求网络
                 .observeOn(AndroidSchedulers.mainThread())//主线程显示数据
-                .subscribe(new DefaultObserver<BaseBean<LoginBean>>() {
+                .subscribe(new BaseObserver<BaseBean<LoginBean>>(composite) {
 
                     @Override
                     protected void onStart() {

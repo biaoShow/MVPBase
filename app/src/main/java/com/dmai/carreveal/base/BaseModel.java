@@ -7,7 +7,7 @@ import rx.Subscription;
 import rx.subscriptions.CompositeSubscription;
 
 public class BaseModel implements IModel {
-    private CompositeSubscription mCompositeSubscription;
+//    private CompositeSubscription mCompositeSubscription;
     protected ApiService apiService;
 
     public BaseModel() {

@@ -38,6 +38,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         }
     }
 
+
     /**
      * 注册返回主线程
      */
