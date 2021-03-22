@@ -7,7 +7,6 @@ import com.dmai.carreveal.contract.MainContract;
 import com.dmai.carreveal.model.MainModel;
 import com.dmai.carreveal.model.bean.BaseBean;
 import com.dmai.carreveal.model.bean.LoginBean;
-import com.dmai.carreveal.model.db.DataBaseManager;
 import com.dmai.carreveal.view.activity.MainActivity;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;

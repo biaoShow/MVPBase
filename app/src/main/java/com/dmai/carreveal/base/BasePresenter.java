@@ -22,7 +22,7 @@ public abstract class BasePresenter<V extends IView, M extends IModel> implement
             weakReference = null;
         }
         if (mModel != null) {
-            mModel.unSubscribe();
+//            mModel.unSubscribe();
             mModel = null;
         }
     }

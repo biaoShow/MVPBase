@@ -2,7 +2,6 @@ package com.dmai.carreveal.view.activity;
 
 
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
@@ -16,7 +15,6 @@ import com.dmai.carreveal.base.BaseActivity;
 import com.dmai.carreveal.contract.MainContract;
 import com.dmai.carreveal.model.bean.BaseBean;
 import com.dmai.carreveal.model.bean.LoginBean;
-import com.dmai.carreveal.model.db.DataBaseManager;
 import com.dmai.carreveal.presenter.MainPresenter;
 
 import butterknife.BindView;
@@ -68,6 +66,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
     @Override
     public void onFail(Throwable ex, String code, String msg) {
+        butInsert.setText("123456");
         Log.e(TAG, msg);
     }
 

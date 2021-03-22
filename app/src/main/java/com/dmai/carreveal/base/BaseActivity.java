@@ -1,6 +1,8 @@
 package com.dmai.carreveal.base;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -15,6 +17,7 @@ import butterknife.Unbinder;
 public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements IView {
     protected P mPresenter;
     private Unbinder unbinder;
+    protected Handler mainHandler;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,6 +36,28 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         if (mPresenter != null) {
             mPresenter.attachView(this);
         }
+    }
+
+    /**
+     * 注册返回主线程
+     */
+    protected void registerMainHandler() {
+        if (mainHandler == null) {
+            mainHandler = new Handler(getMainLooper()) {
+                @Override
+                public void handleMessage(Message msg) {
+                    onMainHandleMessage(msg);
+                }
+            };
+        }
+    }
+
+    /**
+     * 主线程数据处理
+     *
+     * @param msg
+     */
+    protected void onMainHandleMessage(Message msg) {
     }
 
     @Override
