@@ -66,7 +66,6 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
     @Override
     public void onFail(Throwable ex, String code, String msg) {
-        butInsert.setText("123456");
         Log.e(TAG, msg);
     }
 
